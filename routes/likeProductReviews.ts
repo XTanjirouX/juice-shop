@@ -21,7 +21,7 @@ module.exports = function productReviews () {
       } else {
         const likedBy = review.likedBy
         if (!likedBy.includes(user.data.email)) {
-          db.reviewsCollection.update(
+          db.reviewsCollection.update.toString(
             { _id: id },
             { $inc: { likesCount: 1 } }
           ).then(
